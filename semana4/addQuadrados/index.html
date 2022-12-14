@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" id="cor">
+    <button id="action">Inserir</button>
+    <div id="quadrados"></div>
+    <script type="module">
+        import criaQuadrado from './criaQuadrado.js'
+        import {corInput,action,quadrados} from './elementos.js'
+
+        action.onclick = function(){
+            const div = criaQuadrado(corInput.value) 
+            quadrados.prepend(div)
+        }
+        window.ondbclick = function(){
+            const div = criaQuadrado(corInput.value) 
+            quadrados.prepend("red")
+        }
+    </script>
+</body>
+</html>
